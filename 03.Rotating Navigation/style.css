@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+:root {
+  --line-border-fill: #3fb07c;
+  --line-border-empty: #bdbdbd;
+  --background-fill: #57db9e;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(110, 110, 110);
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+}
+.container {
+  background-color: #fafafa;
+  color: #000;
+  transform-origin: top left;
+  width: 100vw;
+  padding: 100px 150px;
+  transition: transform 0.5s linear;
+}
+.container.show {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+.circle {
+  position: relative;
+  background-color: cornflowerblue;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: transform 0.5s linear;
+}
+.container.show .circle {
+  transform: rotate(-70deg);
+}
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  height: 100px;
+  cursor: pointer;
+}
+.circle button:focus {
+  outline: none;
+}
+.circle button.open {
+  left: 60%;
+}
+.circle button.close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+.content {
+  max-width: 1000px;
+  margin: auto;
+}
+.content h1 {
+  margin-bottom: 0;
+}
+.content small {
+  color: #3f3f3f;
+  font-style: italic;
+}
+.content img {
+  width: 100%;
+}
+.content p {
+  line-height: 1.6;
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+.container.show + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+nav ul li i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+nav a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+nav a:hover {
+  color: #294adf;
+  font-weight: bold;
+}
