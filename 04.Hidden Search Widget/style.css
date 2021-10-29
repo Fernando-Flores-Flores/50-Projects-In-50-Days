@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
-:root {
-  --line-border-fill: #3fb07c;
-  --line-border-empty: #bdbdbd;
-  --background-fill: #57db9e;
-}
 * {
   box-sizing: border-box;
 }
